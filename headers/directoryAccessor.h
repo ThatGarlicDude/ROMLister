@@ -4,10 +4,10 @@
 	#include <dirent.h>
 
 	// Opens up a directory.
-	void openDirectory(const char* directory);
+	int openDirectory(const char* directory);
 
 	// Closes the current directory.
-	void closeDirectory();
+	int closeDirectory();
 
 	// Gets the current directory.
 	DIR* getCurrentDirectory();
