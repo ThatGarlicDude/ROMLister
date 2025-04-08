@@ -1,24 +1,25 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <linux/limits.h>
-#include <unistd.h>
 #include "directoryAccessor.h"
+#include "directoryGetter.h"
+#include "fileLister.h"
 #include "filePathArray.h"
+#include "filePathPrinter.h"
 
 int main(int argc, char* argv[]) {
-	char* filePath;
-	printf("Let's set up the filepath we want to work with...\n");
-	// Get the filepath we want to work with.
-	if (argc > 1) {
-		filePath = realpath(argv[1], NULL); // The first agument will be the filepath.
-	} else {
-		filePath = getcwd(filePath, PATH_MAX); // If there are no arguments, just use the current working directory.
-	}
+	char* filePath = setUpFilePath(argv[1]);
+	FilePathArray filePathArray = newFilePathArray(20);
 	// Is the directory valid, or not?
 	if (filePath == NULL) {
 		perror("Error");
 		return -1; // Do not proceed if the filepath is null.
 	}
-	printf("The filepath is: %s\n", filePath);
+	// Open up the directory.
+	if (openDirectory(filePath)) {
+		perror("Error");
+		return -1; // Do not proceed if the directory cannot be opened.
+	}
+	goThroughDirectory(&filePathArray);
+	closeDirectory();
+	printAllFilePaths(&filePathArray);
 	return 0;
 }

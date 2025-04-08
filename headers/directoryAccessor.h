@@ -3,16 +3,13 @@
 
 	#include <dirent.h>
 
+	extern DIR* currentDirectory;
+	extern struct dirent* directoryEntry;
+
 	// Opens up a directory.
 	int openDirectory(const char* directory);
 
 	// Closes the current directory.
 	int closeDirectory();
-
-	// Gets the current directory.
-	DIR* getCurrentDirectory();
-
-	// Gets the directory entry.
-	struct dirent* getDirectoryEntry();
 
 #endif

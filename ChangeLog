@@ -1,6 +1,11 @@
+2025-04-07 GarlicDude <https://github.com/ThatGarlicDude>
+
+	RomLister Version 0.0.3-alpha
+	* A lot of stuff just got added, so I lost count on what's added.
+
 2025-04-05 GarlicDude <https://github.com/ThatGarlicDude>
 
-	RomLister Version 0.0.1-alpha
+	RomLister Version 0.0.2-alpha
 	* Added directory-accessing functionality.
 	* The project can now get a working directory.
 

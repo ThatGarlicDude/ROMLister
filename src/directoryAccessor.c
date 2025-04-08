@@ -6,7 +6,7 @@ struct dirent* directoryEntry;
 
 // Opens up a directory.
 int openDirectory(const char* directory) {
-	printf("Opening %s\n...", directory);
+	printf("Opening %s...\n", directory);
 	currentDirectory = opendir(directory);
 	// Check if the directory couldn't be opened.
 	if (currentDirectory == NULL) {
@@ -19,22 +19,10 @@ int openDirectory(const char* directory) {
 
 // Closes the current directory.
 int closeDirectory() {
-	printf("Closing %s\n...", currentDirectory);
 	if (currentDirectory == NULL) {
-		printf("%s hasn't been opened yet\n", currentDirectory);
 		return -1;
 	}
 	closedir(currentDirectory);
 	printf("Directory closed.\n");
 	return 0;
-}
-
-// Gets the current directory.
-DIR* getCurrentDirectory() {
-	return currentDirectory;
-}
-
-// Gets the directory entry.
-struct dirent* getDirectoryEntry() {
-	return directoryEntry;
 }
