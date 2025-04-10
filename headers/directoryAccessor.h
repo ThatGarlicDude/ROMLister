@@ -1,7 +1,7 @@
+#include <dirent.h>
+
 #ifndef DIRECTORY_ACCESSOR_H
 #define DIRECTORY_ACCESSOR_H
-
-	#include <dirent.h>
 
 	extern DIR* currentDirectory;
 	extern struct dirent* directoryEntry;

@@ -4,6 +4,7 @@
 #include "fileLister.h"
 #include "filePathArray.h"
 #include "filePathPrinter.h"
+#include "filePathTrimmer.h"
 
 int main(int argc, char* argv[]) {
 	char* filePath = setUpFilePath(argv[1]);
@@ -20,6 +21,8 @@ int main(int argc, char* argv[]) {
 	}
 	goThroughDirectory(&filePathArray);
 	closeDirectory();
+	trimFilePathArrayByFirstNull(&filePathArray);
+	printf("Now printing the contents in the directory...\n");
 	printAllFilePaths(&filePathArray);
 	return 0;
 }
