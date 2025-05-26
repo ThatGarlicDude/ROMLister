@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <linux/limits.h>
 
-// Sets up the filepath that the ROM lister will work with.
-char* setUpFilePath(char* filePath) {
+// Sets up the working directory that the ROM lister will work with.
+char* setUpWorkingDirectory(char* filePath) {
 	if (filePath == NULL) {
 		filePath = "./"; // If there is no dedicated filepath, just refer to itself.
 	}

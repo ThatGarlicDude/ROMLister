@@ -1,18 +1,23 @@
-cmake_minimum_required(VERSION 3.12) # Cmake must be on version 3.12 or above to proceed.
-project(romlister VERSION 0.0.5) # Start the project.
+cmake_minimum_required(VERSION 3.18)
+project(romlister VERSION 1.0.0 LANGUAGES C)
 
-set(CMAKE_C_STANDARD 99) # C99 is required.
+# Set up specifications for the C compiler.
+set(CMAKE_C_STANDARD 99)
 set(CMAKE_C_STANDARD_REQUIRED ON)
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC")
+set(CMAKE_C_EXTENSIONS ON)
 
-FILE(GLOB SOURCES src/*.c) # Get all the files from the src directory.
+# Set output directories.
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
-add_executable(romlister ${SOURCES}) # Create the executable.
+# Include its submodule.
+add_subdirectory(submodules/LibPacReader)
 
-add_subdirectory(submodules/LibPacSet) # Include LibPacSet in the project.
+# Gather the files.
+FILE(GLOB SOURCES src/*.c)
 
-target_link_libraries(romlister PRIVATE pacset) # Link it too.
-
-install(TARGETS romlister DESTINATION /usr/local/bin) # Put the executable in the bin folder.
-
-target_include_directories(romlister PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/headers) # Get the files in the header directory as well.
+# Output the project.
+add_executable(romlister ${SOURCES})
+target_include_directories(romlister PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/headers)
+target_link_libraries(romlister PRIVATE pacreader pacsorter pacset)
+install(TARGETS romlister DESTINATION bin)

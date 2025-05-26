@@ -1,3 +1,13 @@
+2025-05-25 GarlicDude <https://github.com/ThatGarlicDude>
+
+	RomLister Version 1.0.0
+	* Removed fileLister.c, as the submodules already have similar function in that file.
+	* Renamed directoryGetter.c and .h to cwdGetter.c and .h.
+	* Removed <linux/limits.h> in cwdGetter, as it is not needed anymore.
+	* Removed directoryAccessor.c.
+	* The project is pretty much simplified. You get the point.
+	* Oh yeah, INSTALL.md is here too!
+
 2025-04-09 GarlicDude <https://github.com/ThatGarlicDude>
 
 	RomLister Version 0.0.5-alpha
