@@ -1,6 +1,6 @@
 # How to Install
 
-Installing *ROMLister* is very simple to do. Here are the things to follow to build the project.
+Installing *RomLister* is very simple to do. Here are the things to follow to build the project.
 
 ## Requirements
 
@@ -13,12 +13,14 @@ To check the version of CMake, run `cmake --version` on your terminal. Make sure
 
 ## Steps to Install
 
-1. Create the build directory inside the root of the project (ROMLister) using: `mkdir build`
+1. Open your terminal, and clone the repository by using: `git clone --recurse-submodules https://github.com/ThatGarlicDude/RomLister.git`
 
-2. Build the project with CMake using: `cmake -S . -B build`
+2. Create the build directory inside the root of the project (RomLister) using: `mkdir build`
 
-3. Compile the project using: `cmake --build build`
+3. Build the project with CMake using: `cmake -S . -B build`
 
-4. Install the project using: `sudo cmake --install build`
+4. Compile the project using: `cmake --build build`
 
-5. After installing, link the shared libraries by running: `sudo ldconfig`
+5. Install the project using: `sudo cmake --install build`
+
+6. After installing, update the shared libraries by running: `sudo ldconfig`

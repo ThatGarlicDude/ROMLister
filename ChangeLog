@@ -1,3 +1,12 @@
+2025-05-27 GarlicDude <https://github.com/ThatGarlicDude>
+
+	RomLister Version 1.1.0
+	* Files that refer to Rom Lister instead of RomLister are now fixed.
+	* Removed cwdGetter, as the LibPacReader has that functionality now.
+	* Removed the headers directory altogehter, as it is now longer needed.
+	* Updated README.md to provide more clarity.
+	* Updated INSTALL.md.
+
 2025-05-25 GarlicDude <https://github.com/ThatGarlicDude>
 
 	RomLister Version 1.0.0
