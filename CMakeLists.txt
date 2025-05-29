@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.18)
-project(romlister VERSION 1.1.0 LANGUAGES C)
+project(romlister VERSION 1.2.0 LANGUAGES C)
 
 # Set up specifications for the C compiler.
 set(CMAKE_C_STANDARD 99)
